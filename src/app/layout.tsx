@@ -29,7 +29,7 @@ export default function RootLayout({
         <Providers>
           <MainHeader />
           <MobileHeader />
-          <Box className="h-full">{children}</Box>
+          <Box className="grow">{children}</Box>
           <footer className="sticky bottom-0">
             <Footer />
             <MobileFooter />
