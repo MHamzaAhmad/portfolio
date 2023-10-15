@@ -10,8 +10,10 @@ import {
   Flex,
   Text,
   Box,
+  DrawerFooter,
 } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
+import MobileFooter from "../MobileFooter";
 
 interface NavDrawerProps {
   isOpen: boolean;
@@ -49,7 +51,12 @@ const NavDrawer = ({ isOpen, onClose }: NavDrawerProps) => {
             fontWeight="bold"
             _active={{ bg: "transparent" }}
           />
-          <DrawerHeader borderBottomWidth="1px" borderColor='brand.border' fontSize='md' fontWeight='big'>
+          <DrawerHeader
+            borderBottomWidth="1px"
+            borderColor="brand.border"
+            fontSize="md"
+            fontWeight="big"
+          >
             <Flex justifyContent="start" alignItems="center">
               <Text>hamza-ahmad</Text>
             </Flex>
@@ -63,16 +70,21 @@ const NavDrawer = ({ isOpen, onClose }: NavDrawerProps) => {
                   cursor="pointer"
                   borderBottomWidth="1px"
                   borderBottomColor="brand.border"
-                  py='1.06rem'
-                  px='1.12rem'
+                  py="1.06rem"
+                  px="1.12rem"
                   bg={selectedItem === item ? "gray.100" : "transparent"}
                   _hover={{ bg: "gray.100" }}
                 >
-                  <Text fontSize='md' color='brand.white'>{item.label}</Text>
+                  <Text fontSize="md" color="brand.white">
+                    {item.label}
+                  </Text>
                 </Box>
               ))}
             </Box>
           </DrawerBody>
+          <DrawerFooter padding={0}>
+            <MobileFooter />
+          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>

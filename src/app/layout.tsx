@@ -4,6 +4,9 @@ import localFont from "next/font/local";
 import MainHeader from "./Components/Header";
 import MobileHeader from "./Components/MobileHeader";
 import Providers from "./Config/Providers";
+import Footer from "./Components/Footer";
+import MobileFooter from "./Components/MobileFooter";
+import { Box } from "@chakra-ui/react";
 
 const fira = localFont({
   src: "./fonts/FiraCode-VF.woff2",
@@ -26,7 +29,11 @@ export default function RootLayout({
         <Providers>
           <MainHeader />
           <MobileHeader />
-          {children}
+          <Box className="h-full">{children}</Box>
+          <footer className="sticky bottom-0">
+            <Footer />
+            <MobileFooter />
+          </footer>
         </Providers>
       </body>
     </html>
