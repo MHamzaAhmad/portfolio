@@ -12,9 +12,21 @@ const MobileFooter = () => {
           find me in:
         </div>
         <div className="flex">
-          <FooterItem left child={<Icon fontSize="2rem" as={AiFillInstagram} />} />
-          <FooterItem left child={<Icon fontSize="2rem" as={AiFillLinkedin} />} />
-          <FooterItem left child={<Icon fontSize="2rem" as={AiFillGithub} />} />
+          <FooterItem
+            left
+            child={<Icon fontSize="2rem" as={AiFillInstagram} />}
+            redirectUrl="https://www.instagram.com/hamzaahmad.i/"
+          />
+          <FooterItem
+            left
+            child={<Icon fontSize="2rem" as={AiFillLinkedin} />}
+            redirectUrl="https://www.linkedin.com/in/mhamza88/"
+          />
+          <FooterItem
+            left
+            child={<Icon fontSize="2rem" as={AiFillGithub} />}
+            redirectUrl="https://github.com/MHamzaAhmad"
+          />
         </div>
       </nav>
     </>
