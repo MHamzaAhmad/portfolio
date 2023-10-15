@@ -18,7 +18,7 @@ const MenuItem: FC<Props> = ({ name, route, leftBorder }): ReactNode => {
           ? "border-l border-l-border-color "
           : "border-r border-r-border-color "
       } flex items-center hover:border-b hover:border-b-accent-color ${
-        path === route ? "border-b-2 border-b-accent-color text-white" : ""
+        path === route ? "border-b-2 border-b-accent-color text-sec-text-color" : ""
       }`}
     >
       {name}

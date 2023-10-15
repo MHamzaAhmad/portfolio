@@ -8,6 +8,8 @@ import Footer from "./Components/Footer";
 import MobileFooter from "./Components/MobileFooter";
 import { Box } from "@chakra-ui/react";
 
+import "@/config/highlightTheme.css";
+
 const fira = localFont({
   src: "./fonts/FiraCode-VF.woff2",
   display: "swap",
