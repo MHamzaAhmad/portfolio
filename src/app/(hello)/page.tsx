@@ -1,13 +1,10 @@
 import React from 'react';
 
-interface Props {
-     name: string;
-}
 
-const Hello: React.FC<Props> = ({ name }) => {
+const Hello: React.FC = () => {
      return (
           <div>
-               <h1>Hello, {name}!</h1>
+               <h1>Hello, there!</h1>
           </div>
      );
 };
