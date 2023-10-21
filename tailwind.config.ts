@@ -18,6 +18,7 @@ const config: Config = {
         "accent-color": "var(--accent-color)",
         "sec-text-color": "var(--secondary-text-color)",
         "purple-text": "#4D5BCE",
+        "background-color": "var(--background-color)",
       },
       screens: {
         smallest: "320px",

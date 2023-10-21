@@ -1,10 +1,21 @@
 import CodeLine from "@/components/Base/CodeLine";
 import React from "react";
 import SnippetScroll from "./components/SnippetScroll";
+import { url } from "inspector";
 
 const Hello: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 laptop:grid-cols-2 w-full h-full">
+    <div
+      className="grid grid-cols-1 laptop:grid-cols-2 w-full h-full"
+      style={{
+        backgroundImage: `url(
+            "https://d14nscjm3gg2rb.cloudfront.net/home_background_blurs.svg"
+          )`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "60%",
+        backgroundPosition: "right 0px top 10%",
+      }}
+    >
       <div className="col-span-1 flex flex-col justify-center items-end">
         <div>
           <div className="text-25 text-sec-text-color">{"Hi all. I am"}</div>
@@ -19,7 +30,7 @@ const Hello: React.FC = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center col-span-1">
+      <div className="col-span-1 flex justify-center items-center">
         <SnippetScroll />
       </div>
     </div>
