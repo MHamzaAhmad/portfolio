@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --foreground-color: #607B96;
+  --foreground-color: #607b96;
   --background-color: #011627;
-  --border-color: #1E2D3D;
+  --border-color: #1e2d3d;
   --font-size: 1rem;
-  --accent-color: #FEA55F;
-  --secondary-text-color: #E5E9F0;
-  --purple-accent: #4D5BCE;
+  --accent-color: #fea55f;
+  --secondary-text-color: #e5e9f0;
+  --purple-accent: #4d5bce;
+  --code-background: #011221;
 }
 
 body {
@@ -22,3 +23,9 @@ body {
   justify-content: center;
   height: 100vh;
 }
+
+.wmde-markdown,
+.wmde-markdown pre {
+  background-color: transparent !important;
+}
+

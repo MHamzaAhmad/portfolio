@@ -19,6 +19,7 @@ const config: Config = {
         "sec-text-color": "var(--secondary-text-color)",
         "purple-text": "#4D5BCE",
         "background-color": "var(--background-color)",
+        "code-back": "var(--code-background)",
       },
       screens: {
         smallest: "320px",

@@ -9,14 +9,13 @@ const MainHeader = () => {
             hamza-ahmad
           </div>
           <MenuItem name="_hello" route="/" />
-          <MenuItem name="_about-me" route="/about" />
+          <MenuItem name="_about-me" route="/about-me" />
           <MenuItem name="_projects" route="/projects" />
         </div>
         <div className="col-span-1 flex justify-end">
           <MenuItem name="_contact_me" route="/contact_me" leftBorder />
         </div>
       </nav>
-
     </>
   );
 };
