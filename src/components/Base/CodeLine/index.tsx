@@ -22,11 +22,7 @@ const CodeLine: React.FC<CodeLineProps> = ({ code, language }) => {
     }
   }, []);
 
-  return (
-    <pre>
-      <code ref={codeRef}>{code}</code>
-    </pre>
-  );
+  return <code ref={codeRef}>{code}</code>;
 };
 
 export default CodeLine;
