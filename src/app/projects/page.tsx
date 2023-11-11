@@ -4,10 +4,12 @@ import ProjectCard from "./Components/ProjectCard";
 const ProjectsPage = () => {
   const projects = useProjects();
   return (
-    <div className="grid laptop:grid-cols-3 tablet:grid-cols-2 grid-cols-1 px-[20rem] py-[6rem]">
-      {projects.map((project, index) => (
-        <ProjectCard key={index} index={index} project={project} />
-      ))}
+    <div className="w-full flex justify-center">
+      <div className="grid desktop:grid-cols-3 laptop:grid-cols-2 grid-cols-1 p-[2.5rem] gap-4 desktop:max-w-[70vw]">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} index={index} project={project} />
+        ))}
+      </div>
     </div>
   );
 };

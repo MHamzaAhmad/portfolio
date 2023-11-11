@@ -1,7 +1,8 @@
 "use client";
 
+import Chip from "@/components/Base/Chip";
 import SecondaryButton from "@/components/Base/SecondaryButton";
-import { Card, CardBody, CardHeader } from "@chakra-ui/react";
+import { Badge, Card, CardBody, CardHeader } from "@chakra-ui/react";
 import Image, { ImageLoader, ImageLoaderProps } from "next/image";
 import { FC } from "react";
 
@@ -26,8 +27,8 @@ const ProjectCard: FC<Props> = (props) => {
       <Card
         variant="outline"
         bg="transparent"
-                 borderColor="var(--border-color)"
-                 borderRadius='0.9375rem'
+        borderColor="var(--border-color)"
+        borderRadius="0.9375rem"
       >
         <CardHeader className="border-b border-border-color">
           <Image
@@ -39,7 +40,12 @@ const ProjectCard: FC<Props> = (props) => {
           />
         </CardHeader>
         <CardBody className="bg-code-back text-foreground-color rounded-b-[0.975rem]">
-          {props.project.description}
+          <div>{props.project.description}</div>
+          <div className="mt-3">
+            {props.project.technologies.map((tech) => (
+              <Chip key={tech}>{tech}</Chip>
+            ))}
+          </div>
           <SecondaryButton className="mt-[1.4rem]" route="">
             view-project
           </SecondaryButton>

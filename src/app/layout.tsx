@@ -29,9 +29,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={fira.className}>
         <Providers>
-          <MainHeader />
-          <MobileHeader />
-          <Box className="grow">{children}</Box>
+          <header className="sticky top-0">
+            <MainHeader />
+            <MobileHeader />
+          </header>
+          <Box className="h-full overflow-scroll">{children}</Box>
           <footer className="sticky bottom-0">
             <Footer />
             <MobileFooter />
