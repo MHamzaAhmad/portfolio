@@ -7,6 +7,7 @@ import Providers from "../config/Providers";
 import Footer from "../components/Footer";
 import MobileFooter from "../components/MobileFooter";
 import { Box } from "@chakra-ui/react";
+import ProgressBar from "@/config/ProgressBar";
 
 import "@/config/highlightTheme.css";
 
@@ -29,15 +30,17 @@ export default function RootLayout({
     <html lang="en">
       <body className={fira.className}>
         <Providers>
-          <header className="sticky top-0">
-            <MainHeader />
-            <MobileHeader />
-          </header>
-          <Box className="h-full overflow-scroll">{children}</Box>
-          <footer className="sticky bottom-0">
-            <Footer />
-            <MobileFooter />
-          </footer>
+          <ProgressBar>
+            <header className="sticky top-0">
+              <MainHeader />
+              <MobileHeader />
+            </header>
+            <Box className="h-full overflow-scroll">{children}</Box>
+            <footer className="sticky bottom-0">
+              <Footer />
+              <MobileFooter />
+            </footer>
+          </ProgressBar>
         </Providers>
       </body>
     </html>
