@@ -12,6 +12,8 @@ const SecondaryButton: FC<Props> = ({ children, route, className }) => {
     <Link
       className={`inline-block py-[0.625rem] px-[0.875rem] text-sec-text-color bg-light-grey text-[0.875rem] rounded-lg hover:bg-transparent hover:border-border-color border border-light-grey box-border ${className}`}
       href={route}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {children}
     </Link>

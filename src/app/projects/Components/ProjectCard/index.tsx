@@ -47,7 +47,7 @@ const ProjectCard: FC<Props> = (props) => {
               <Chip key={tech}>{tech}</Chip>
             ))}
           </div>
-          <SecondaryButton className="mt-[1.4rem]" route="">
+          <SecondaryButton className="mt-[1.4rem]" route={props.project.url}>
             view-project
           </SecondaryButton>
         </CardBody>
