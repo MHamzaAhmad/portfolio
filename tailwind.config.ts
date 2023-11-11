@@ -20,6 +20,8 @@ const config: Config = {
         "purple-text": "#4D5BCE",
         "background-color": "var(--background-color)",
         "code-back": "var(--code-background)",
+        "foreground-color": "var(--foreground-color)",
+        "light-grey": "var(--light-grey)",
       },
       screens: {
         smallest: "320px",
