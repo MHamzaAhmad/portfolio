@@ -29,14 +29,15 @@ const ProjectCard: FC<Props> = (props) => {
         bg="transparent"
         borderColor="var(--border-color)"
         borderRadius="0.9375rem"
+        minW="18rem"
       >
-        <CardHeader className="border-b border-border-color">
+        <CardHeader className="border-b border-border-color p-0 h-[12rem] w-full relative">
           <Image
             loader={loader}
             src={props.project.image}
             alt={props.project.description}
-            width={150}
-            height={90}
+            fill
+            className="rounded-t-[0.9375rem]"
           />
         </CardHeader>
         <CardBody className="bg-code-back text-foreground-color rounded-b-[0.975rem]">
