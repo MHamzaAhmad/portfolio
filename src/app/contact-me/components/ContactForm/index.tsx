@@ -12,6 +12,7 @@ import { FC, useState } from "react";
 import * as yup from "yup";
 import { ContactFormValues } from "./types";
 import ThankYou from "../ThankYou";
+import useFirestore from "@/services/FirestoreService";
 
 const ContactForm: FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -20,9 +21,14 @@ const ContactForm: FC = () => {
     email: yup.string().email().required("Email is required"),
     message: yup.string().max(500).required("Message is required"),
   });
+  const { addContactMessage } = useFirestore();
 
   const onNew = () => {
     setSubmitted(false);
+  };
+
+  const onSubmit = async (values: ContactFormValues) => {
+    await addContactMessage({ ...values, createdAt: new Date() });
   };
 
   return (
@@ -31,8 +37,8 @@ const ContactForm: FC = () => {
         <Formik<ContactFormValues>
           initialValues={{ name: "", email: "", message: "" }}
           validationSchema={validationSchema}
-          onSubmit={(values, actions) => {
-            console.log(values);
+          onSubmit={async (values, actions) => {
+            await onSubmit(values);
             actions.resetForm();
             setSubmitted(true);
             actions.setSubmitting(false);
