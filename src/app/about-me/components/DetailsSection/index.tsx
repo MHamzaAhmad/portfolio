@@ -44,7 +44,7 @@ const DetailsSection = () => {
   return (
     <>
       <Heading className="mx-4 mt-4">
-        {"> Hello there! I am Muhammad Hamza"}
+        {"> Hello there! I am Hamza Ahmad"}
       </Heading>
       <MarkdownPreview source={source} disableCopy />;
     </>

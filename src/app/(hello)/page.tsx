@@ -7,7 +7,7 @@ const Hello: React.FC = () => {
       <div className="col-span-1 flex flex-col justify-center laptop:items-end items-center">
         <div className="px-4">
           <div className="text-25 text-sec-text-color">{"Hi all. I am"}</div>
-          <div className="text-heading text-sec-text-color">Muhammad Hamza</div>
+          <div className="text-heading text-sec-text-color">Hamza Ahmad</div>
           <div className="text-two text-purple-text">
             {"> FullStack Software Engineer"}
           </div>
