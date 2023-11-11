@@ -13,7 +13,7 @@ const MainHeader = () => {
           <MenuItem name="_projects" route="/projects" />
         </div>
         <div className="col-span-1 flex justify-end">
-          <MenuItem name="_contact_me" route="/contact_me" leftBorder />
+          <MenuItem name="_contact_me" route="/contact-me" leftBorder />
         </div>
       </nav>
     </>

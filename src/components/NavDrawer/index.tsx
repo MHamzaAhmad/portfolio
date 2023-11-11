@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 import MobileFooter from "../MobileFooter";
+import { useRouter } from "next/navigation";
 
 interface NavDrawerProps {
   isOpen: boolean;
@@ -26,17 +27,19 @@ interface MenuItem {
 }
 
 const NavDrawer = ({ isOpen, onClose }: NavDrawerProps) => {
+  const router = useRouter();
   const menuItems: MenuItem[] = [
     { label: "_hello", link: "/" },
     { label: "_about-me", link: "/about-me" },
     { label: "_projects", link: "/projects" },
-    { label: "_contact-me", link: "/contact" },
+    { label: "_contact-me", link: "/contact-me" },
   ];
 
   const [selectedItem, setSelectedItem] = useState(menuItems[0]);
 
   const handleMenuItemClick = (item: MenuItem) => {
     setSelectedItem(item);
+    router.push(item.link);
     onClose();
   };
 
