@@ -1,17 +1,17 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import MainHeader from "./Components/Header";
-import MobileHeader from "./Components/MobileHeader";
-import Providers from "./Config/Providers";
-import Footer from "./Components/Footer";
-import MobileFooter from "./Components/MobileFooter";
+import MainHeader from "../components/Header";
+import MobileHeader from "../components/MobileHeader";
+import Providers from "../config/Providers";
+import Footer from "../components/Footer";
+import MobileFooter from "../components/MobileFooter";
 import { Box } from "@chakra-ui/react";
 
 import "@/config/highlightTheme.css";
 
 const fira = localFont({
-  src: "./fonts/FiraCode-VF.woff2",
+  src: "../fonts/FiraCode-VF.woff2",
   display: "swap",
 });
 
