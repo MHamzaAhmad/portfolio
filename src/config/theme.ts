@@ -29,11 +29,19 @@ const theme = extendTheme({
     "4xl": "2.25rem",
     "5xl": "3rem",
     "6xl": "4rem",
-     },
-     fontWeights: {
-          big: 450,
-          normal: 400,
-     }
+  },
+  fontWeights: {
+    big: 450,
+    normal: 400,
+  },
+  styles: {
+    global: {
+      body: {
+        bg: "var(--background-color)",
+        color: "var(--foreground-color)",
+      },
+    },
+  },
 });
 
 export default theme;
