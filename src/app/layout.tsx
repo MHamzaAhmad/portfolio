@@ -1,28 +1,48 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import localFont from 'next/font/local'
-import MainLayout from './Components/MainLayout'
+import "./globals.css";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import MainHeader from "../components/Header";
+import MobileHeader from "../components/MobileHeader";
+import Providers from "../config/Providers";
+import Footer from "../components/Footer";
+import MobileFooter from "../components/MobileFooter";
+import { Box } from "@chakra-ui/react";
+import ProgressBar from "@/config/ProgressBar";
+
+import "@/config/highlightTheme.css";
 
 const fira = localFont({
-  src: './fonts/FiraCode-VF.woff2',
-  display: 'swap',
-})
+  src: "../fonts/FiraCode-VF.woff2",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: 'Muhammad Hamza',
-  description: 'A great engineer who treaded the path of the unknown.',
-}
+  title: "Muhammad Hamza",
+  description: "A great engineer who treaded the path of the unknown.",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className={fira.className}>
-        <MainLayout>{children}</MainLayout>
+        <Providers>
+          <ProgressBar>
+            <header className="sticky top-0">
+              <MainHeader />
+              <MobileHeader />
+            </header>
+            <Box className="h-full overflow-scroll">{children}</Box>
+            <footer className="sticky bottom-0">
+              <Footer />
+              <MobileFooter />
+            </footer>
+          </ProgressBar>
+        </Providers>
       </body>
     </html>
-  )
+  );
 }
