@@ -1,5 +1,6 @@
-import {initializeApp} from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyCfb8OMmAEbmvEgirliwDoxPUYgDapYQuk",
   authDomain: "portfolio-dae28.firebaseapp.com",
@@ -13,3 +14,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const firestore = getFirestore(app);
+
+export const analytics = getAnalytics(app);
