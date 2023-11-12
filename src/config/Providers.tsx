@@ -8,6 +8,10 @@ import { logEvent } from "firebase/analytics";
 import { analytics } from "./firebase";
 
 function Providers({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    logEvent(analytics, "app_view");
+  }, []);
+
   return (
     <CacheProvider>
       <ChakraProvider theme={theme}>{children}</ChakraProvider>
