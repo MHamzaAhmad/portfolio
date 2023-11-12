@@ -3,6 +3,9 @@
 import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "./theme";
+import { useEffect } from "react";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "./firebase";
 
 function Providers({ children }: { children: React.ReactNode }) {
   return (
