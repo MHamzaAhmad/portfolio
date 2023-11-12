@@ -1,4 +1,3 @@
-import CodeLine from "@/components/Base/CodeLine";
 import React from "react";
 
 const Hello: React.FC = () => {
@@ -12,10 +11,9 @@ const Hello: React.FC = () => {
             {"> FullStack Software Engineer"}
           </div>
           <div className="mt-[5.07rem]">{"// welcome to my humble abode"}</div>
-          <div>{"// you can also visit me here too"}</div>
-          <CodeLine
-            code={'const githubLink = "https://github.com/MHamzaAhmad"'}
-          />
+          <div className="mt-3">{"// i can create platform of your dreams..."}</div>
+          <div>{"// just like i have done in the past"}</div>
+          <div>{"// lets connect! and create something amazing"}</div>
         </div>
       </div>
     </div>

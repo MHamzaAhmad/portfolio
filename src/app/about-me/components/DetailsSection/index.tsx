@@ -1,53 +1,32 @@
 "use client";
-import Heading from "@/components/Base/Heading";
-import MarkdownPreview from "@uiw/react-markdown-preview";
+import Image, { ImageLoaderProps } from "next/image";
+import useCloudinary from "@/services/CloudinaryService";
 
-const source = `
-\`\`\`ts
-// A passionate and dedicated full-stack software engineer
-// with over 2 years of hands-on experience in the dynamic world
-// of software development. My journey has been marked
-// by a relentless pursuit of excellence, creativity, and a deep commitment
-// to crafting seamless digital experiences.
-
-// At the heart of my expertise lies my proficiency in full-stack development,
-// where I have honed my skills to create robust and innovative solutions.
-// My specialization in Flutter has allowed me to weave together the perfect blend
-// of beauty and performance, resulting in captivating and efficient mobile applications.
-
-// I thrive in the realm of JavaScript and TypeScript-based web technologies,
-// with mastery over tools like React, Node.js, Express, and Next.js.
-// The web is my canvas, and I paint with a palette of cutting-edge technologies
-// to bring ideas to life.
-
-// I take pride in a diverse portfolio that spans various domains.
-// From fitness apps that inspire healthier lifestyles to
-// stock market analysis tools empowering informed decisions, from engaging
-// chat applications to streamlined management apps, I've successfully
-// brought a myriad of ideas into reality.
-
-// What sets me apart is not just my technical acumen but my
-// unwavering commitment to excellence. I approach each project
-// with a blend of creativity and precision, ensuring that the
-// end product not only meets but exceeds expectations.
-
-// Embark on a journey with me as we explore the endless
-// possibilities of software development. Let's transform ideas into reality,
-// crafting digital solutions that not only function seamlessly
-// but also leave a lasting impression.
-
-Thank you for visiting my portfolio. Let's create something extraordinary together!
-
-\`\`\`
-`;
 const DetailsSection = () => {
+  const { getImgOptimized } = useCloudinary();
+
+  const loader = ({ src }: ImageLoaderProps) => {
+    return src;
+  };
+
   return (
-    <>
-      <Heading className="mx-4 mt-4">
-        {"> Hello there! I am Hamza Ahmad"}
-      </Heading>
-      <MarkdownPreview source={source} disableCopy />;
-    </>
+    <div className=" pt-5">
+      <Image
+        src={getImgOptimized({ name: "portfolio/assets/flg811xzifnw3ocgxwxm" })}
+        alt="Hamza"
+        loader={loader}
+        width={200}
+        height={100}
+        className="rounded-full object-cover object-bottom w-[15rem] h-[15rem] mx-auto"
+      />
+      <div className="mt-7 px-8">
+        <p className="text-justify mt-4">{`I'm a passionate full-stack software engineer with over 2 years of hands-on experience in the dynamic realm of software development. My journey is marked by a relentless pursuit of excellence, creativity, and a deep commitment to crafting seamless digital experiences.`}</p>
+        <p className="text-justify mt-4">{`At the core of my expertise is full-stack development, where I create robust and innovative solutions. Specializing in Flutter, I seamlessly blend beauty and performance, crafting captivating and efficient mobile applications. In the realm of JavaScript and TypeScript-based web technologies, I thrive with mastery over tools like React, Node.js, Express, and Next.js.`}</p>
+        <p className="text-justify mt-4">{`The computer is my canvas, and I paint with cutting-edge technologies to bring ideas to life. My diverse portfolio spans various domains, from fitness apps promoting healthier lifestyles to stock market analysis tools empowering informed decisions. I take pride in successfully bringing a myriad of ideas into reality.`}</p>
+        <p className="text-justify mt-4">{`What sets me apart is not just technical acumen but an unwavering commitment to excellence. I approach each project with a blend of creativity and precision, ensuring the end product exceeds expectations.`}</p>
+        <p className="text-justify mt-4">{`Embark on a journey with me to explore the endless possibilities of software development. Let's transform ideas into reality, crafting digital solutions that function seamlessly and leave a lasting impression.`}</p>
+      </div>
+    </div>
   );
 };
 
