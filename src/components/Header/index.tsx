@@ -9,7 +9,7 @@ const MainHeader = () => {
             hamza-ahmad
           </div>
           <MenuItem name="_hello" route="/" />
-          <MenuItem name="_about-me" route="/about-me" />
+          <MenuItem name="_about_me" route="/about-me" />
           <MenuItem name="_projects" route="/projects" />
         </div>
         <div className="col-span-1 flex justify-end">

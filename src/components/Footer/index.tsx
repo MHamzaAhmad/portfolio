@@ -3,6 +3,7 @@ import { Icon, Text } from "@chakra-ui/react";
 import MenuItem from "../Header/MenuItem";
 import FooterItem from "./FooterItem";
 import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { TbBrandFiverr, TbBrandUpwork } from "react-icons/tb";
 
 const Footer = () => {
   return (
@@ -19,6 +20,14 @@ const Footer = () => {
           <FooterItem
             child={<Icon fontSize="2rem" as={AiFillLinkedin} />}
             redirectUrl="https://www.linkedin.com/in/mhamza88/"
+          />
+          <FooterItem
+            child={<Icon fontSize="1.8rem" as={TbBrandFiverr} />}
+            redirectUrl="https://www.fiverr.com/hamzaahmed88"
+          />
+          <FooterItem
+            child={<Icon fontSize="2rem" as={TbBrandUpwork} />}
+            redirectUrl="https://www.upwork.com/freelancers/muhammadhamza105"
           />
         </div>
         <div className="col-span-1 flex justify-end">

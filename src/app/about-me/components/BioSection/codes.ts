@@ -21,3 +21,11 @@ const technologies = () => {
 }
 \`\`\`
 `;
+
+export const education = `
+\`\`\`js
+const education = () => {
+     return 'Bachelor of Computer Science from University of Engineering and Technology, Lahore'
+}
+\`\`\`
+`;

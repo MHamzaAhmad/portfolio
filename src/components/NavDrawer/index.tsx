@@ -30,9 +30,9 @@ const NavDrawer = ({ isOpen, onClose }: NavDrawerProps) => {
   const router = useRouter();
   const menuItems: MenuItem[] = [
     { label: "_hello", link: "/" },
-    { label: "_about-me", link: "/about-me" },
+    { label: "_about_me", link: "/about-me" },
     { label: "_projects", link: "/projects" },
-    { label: "_contact-me", link: "/contact-me" },
+    { label: "_contact_me", link: "/contact-me" },
   ];
 
   const [selectedItem, setSelectedItem] = useState(menuItems[0]);
