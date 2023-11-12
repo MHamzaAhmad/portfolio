@@ -1,15 +1,18 @@
 "use client";
-
 import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "./theme";
 import { useEffect } from "react";
-import { logEvent } from "firebase/analytics";
+import { isSupported, logEvent } from "firebase/analytics";
 import { analytics } from "./firebase";
 
 function Providers({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    logEvent(analytics, "app_view");
+    isSupported().then((isSupported) => {
+      if (isSupported) {
+        logEvent(analytics, "app_viewed");
+      }
+    });
   }, []);
 
   return (
