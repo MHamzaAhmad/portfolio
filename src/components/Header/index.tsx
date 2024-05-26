@@ -1,4 +1,5 @@
 import MenuItem from "./MenuItem";
+import ResumeButton from "./ResumeButton";
 
 const MainHeader = () => {
   return (
@@ -13,6 +14,7 @@ const MainHeader = () => {
           <MenuItem name="_projects" route="/projects" />
         </div>
         <div className="col-span-1 flex justify-end">
+          <ResumeButton leftBorder />
           <MenuItem name="_contact_me" route="/contact-me" leftBorder />
         </div>
       </nav>

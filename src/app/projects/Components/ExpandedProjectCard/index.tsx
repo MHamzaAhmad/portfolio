@@ -1,6 +1,7 @@
 import { ChipGroup } from "@/components/Base/ChipGroup";
 import Heading from "@/components/Base/Heading";
-import { Button, Spacer } from "@chakra-ui/react";
+import SecondaryButton from "@/components/Base/SecondaryButton";
+import { Spacer } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { FC } from "react";
 
@@ -13,14 +14,19 @@ export const ExpandedProjectCard: FC<Props> = ({ project, onClose }) => {
     <div className="max-h-[50dvh]">
       <div className="flex justify-between items-center">
         <Heading className="font-bold">{project.name}</Heading>
-        <motion.button
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.8 }}
-          onClick={onClose}
-          className="text-2xl font-bold text-accent-color"
-        >
-          X
-        </motion.button>
+        <div>
+          <SecondaryButton className="me-4" route={project.url}>
+            view-project
+          </SecondaryButton>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.8 }}
+            onClick={onClose}
+            className="text-2xl font-bold text-accent-color"
+          >
+            X
+          </motion.button>
+        </div>
       </div>
       <div>
         <Spacer h="1rem" />

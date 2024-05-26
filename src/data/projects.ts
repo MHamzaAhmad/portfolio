@@ -56,9 +56,9 @@ export const useProjects = (): Models.Project[] => {
       backend: ["nest", "mysql"],
       infra: ["digital ocean"],
       languages: ["typescript"],
-      url: "https://sicmvp.septemsystems.com/login",
+      url: "https://smartinterviewcoach.com/",
       image: getImgOptimized({
-        name: "portfolio/projects/ep77detailedDescriptionyxekhsvrzj3t4",
+        name: "portfolio/projects/ep77tagyxekhsvrzj3t4",
       }),
       detailedDescription:
         "This platform helps job seekers prepare for interviews by providing a database of common interview questions, tips, and resources. It allows users to practice answering questions and receive feedback to improve their interview skills.",
