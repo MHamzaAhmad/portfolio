@@ -10,11 +10,6 @@ const useCloudinary = (): CloudinaryServices => {
       const img = cld.image(name).delivery(quality(auto()));
       return img.toURL();
     },
-    getPdfOptimized: (dto) => {
-      const { name, quality: qua = "auto" } = dto;
-      const pdf = cld.image(name).delivery(quality(auto()));
-      return pdf.toURL();
-    },
   };
 };
 
