@@ -2,6 +2,7 @@
 import Heading from "@/components/Base/Heading";
 import { Card, CardBody, CardHeader } from "@chakra-ui/react";
 import MarkdownPreview from "@uiw/react-markdown-preview";
+import { motion } from "framer-motion";
 import { FC } from "react";
 
 interface Props {
@@ -11,7 +12,7 @@ interface Props {
 
 const CodeDisplay: FC<Props> = ({ source, title }) => {
   return (
-    <>
+    <motion.div whileHover={{ scale: 1.01 }}>
       <Card
         className="mb-4 hover:drop-shadow-xl transition duration-300 ease-in-out"
         background="var(--background-color)"
@@ -28,7 +29,7 @@ const CodeDisplay: FC<Props> = ({ source, title }) => {
           </div>
         </CardBody>
       </Card>
-    </>
+    </motion.div>
   );
 };
 
