@@ -40,6 +40,21 @@ export const useProjects = (): Models.Project[] => {
       detailedDescription:
         "Ultahost is a web hosting platform that provides end-to-end solutions for hosting websites, applications, and databases. It offers a user-friendly interface, automated deployment, and scalable infrastructure to meet the needs of developers and businesses.",
     },
+    // {
+    //   name: "nfirs",
+    //   description: "Incident reporting system for fire departments",
+    //   technologies: ["nextjs", "nestjs", "typescript", "mongodb"],
+    //   frontend: ["nextjs", "mui", "tailwind"],
+    //   backend: ["nestjs", "mongodb", "mongoose"],
+    //   infra: ["digital ocean"],
+    //   languages: ["typescript"],
+    //   url: "http://nfirs.septemsystems.com/",
+    //   image: getImgOptimized({
+    //     name: "portfolio/projects/whg80bqobfwvcun9b4ll",
+    //   }),
+    //   detailedDescription:
+    //     "NFIRS is an incident reporting system designed for fire departments to record and analyze data related to fire incidents. It provides a user-friendly interface for entering incident details, generating reports, and tracking trends over time.",
+    // },
     {
       name: "smart interview coach",
       description: "A platform for job seekers to practice interview questions",
