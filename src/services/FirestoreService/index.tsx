@@ -8,7 +8,7 @@ const useFirestore = (): FirestoreServices => {
   return {
     addContactMessage: async (params) => {
       try {
-        const res = await addDoc(collection(firestore, "contact-me"), params);
+        await addDoc(collection(firestore, "contact-me"), params);
         toast({
           description: "Thank you for your message!",
         });

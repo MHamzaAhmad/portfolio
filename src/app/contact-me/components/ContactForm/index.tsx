@@ -16,12 +16,13 @@ import useFirestore from "@/services/FirestoreService";
 
 const ContactForm: FC = () => {
   const [submitted, setSubmitted] = useState(false);
+  const { addContactMessage } = useFirestore();
+
   const validationSchema = yup.object().shape({
     name: yup.string().required("Name is required"),
     email: yup.string().email().required("Email is required"),
     message: yup.string().max(500).required("Message is required"),
   });
-  const { addContactMessage } = useFirestore();
 
   const onNew = () => {
     setSubmitted(false);
