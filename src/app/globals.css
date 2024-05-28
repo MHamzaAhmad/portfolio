@@ -3,30 +3,31 @@
 @tailwind utilities;
 
 :root {
-  --foreground-color: #607b96;
-  --background-color: #011627;
-  --border-color: #1e2d3d;
-  --font-size: 1rem;
-  --accent-color: #fea55f;
-  --secondary-text-color: #e5e9f0;
-  --purple-accent: #4d5bce;
-  --code-background: #011221;
-  --light-grey: #1c2b3a;
+    --foreground-color: #607b96;
+    --background-color: #011627;
+    --border-color: #1e2d3d;
+    --font-size: 1rem;
+    --accent-color: #fea55f;
+    --secondary-text-color: #e5e9f0;
+    --purple-accent: #4d5bce;
+    --code-background: #011221;
+    --light-grey: #1c2b3a;
 }
 
 body {
-  color: var(--foreground-color);
-  background: var(--background-color);
-  border-right: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
-  font-size: var(--font-size);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
+    color: var(--foreground-color);
+    background: var(--background-color);
+    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    font-size: var(--font-size);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100dvh;
+    max-width: 100dvw;
 }
 
 .wmde-markdown,
 .wmde-markdown pre {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }

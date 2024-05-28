@@ -1,6 +1,5 @@
 "use client";
 import { Icon, Text } from "@chakra-ui/react";
-import MenuItem from "../Header/MenuItem";
 import FooterItem from "./FooterItem";
 import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { TbBrandFiverr, TbBrandUpwork } from "react-icons/tb";
@@ -11,7 +10,7 @@ const Footer = () => {
       <nav className="grid grid-cols-3 border-y border-y-border-color laptop:grid smallest:hidden">
         <div className="col-span-2 flex">
           <div className="text-center px-[1.38rem] py-[0.94rem] border-r border-r-border-color flex items-center">
-            find me in:
+            _find_me_in:
           </div>
           <FooterItem
             child={<Icon fontSize="2rem" as={AiFillInstagram} />}

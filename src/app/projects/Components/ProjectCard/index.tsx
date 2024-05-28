@@ -2,8 +2,8 @@
 
 import Chip from "@/components/Base/Chip";
 import SecondaryButton from "@/components/Base/SecondaryButton";
-import { Badge, Card, CardBody, CardHeader } from "@chakra-ui/react";
-import Image, { ImageLoader, ImageLoaderProps } from "next/image";
+import { Card, CardBody, CardHeader } from "@chakra-ui/react";
+import Image, { ImageLoaderProps } from "next/image";
 import { FC } from "react";
 
 interface Props {
@@ -17,9 +17,9 @@ const ProjectCard: FC<Props> = (props) => {
   };
 
   return (
-    <div>
+    <div className="cursor-pointer">
       <div className="flex">
-        <p className="text-one text-purple-text font-bold mr-3 mb-[0.92rem]">{`Project ${
+        <p className="text-one text-purple-text font-bold mr-3 mb-[0.92rem]">{`project-${
           props.index + 1
         }`}</p>
         <p>{`// ${props.project.name.toLowerCase()}`}</p>
@@ -47,9 +47,6 @@ const ProjectCard: FC<Props> = (props) => {
               <Chip key={tech}>{tech}</Chip>
             ))}
           </div>
-          <SecondaryButton className="mt-[1.4rem]" route={props.project.url}>
-            view-project
-          </SecondaryButton>
         </CardBody>
       </Card>
     </div>

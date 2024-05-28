@@ -1,6 +1,5 @@
 "use client";
-import { Icon, Text } from "@chakra-ui/react";
-import MenuItem from "../Header/MenuItem";
+import { Icon } from "@chakra-ui/react";
 import FooterItem from "../Footer/FooterItem";
 import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 
@@ -9,7 +8,7 @@ const MobileFooter = () => {
     <>
       <nav className="flex justify-between border-y border-y-border-color laptop:hidden w-full">
         <div className="text-center px-[1.38rem] py-[0.94rem] flex items-center">
-          find me in:
+          _find_me_in:
         </div>
         <div className="flex">
           <FooterItem

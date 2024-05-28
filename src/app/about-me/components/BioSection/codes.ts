@@ -2,7 +2,7 @@ export const experience = `
 \`\`\`js
 const experience = () => {
   return {
-    longStoryShort: "2+ years of experience in FullStack Development",
+    longStoryShort: "Around 4 years of experience in FullStack Development",
     experiences: [
       {
         company: "Septem Systems",
@@ -17,7 +17,7 @@ const experience = () => {
       {
         company: "Freelance",
         position: "Software Engineer",
-        tenure: "Sep 2021 - Apr 2022",
+        tenure: "Sep 2020 - Apr 2022",
       },
     ],
   };
@@ -28,7 +28,7 @@ const experience = () => {
 export const languages = `
 \`\`\`js
 const languages = () => {
-     return ['JavaScript', 'TypeScript', 'Dart']
+     return ['JavaScript', 'TypeScript', 'Dart', 'GO', 'Python']
 }
 \`\`\`
 `;
@@ -36,15 +36,37 @@ const languages = () => {
 export const technologies = `
 \`\`\`js
 const technologies = () => {
-     return ['Flutter', 'React', 'Next', 'NodeJS', 'Express', 'GraphQL', 'MongoDB', 'PostgreSQL', 'AWS']
-}
+  return {
+    frontend: ["React", "Next", "Flutter"],
+    backend: [
+      "NodeJS",
+      "Express",
+      "GraphQL",
+      "NestJS",
+      "GO",
+      "gin",
+      "Python",
+      "Flask",
+      "Fast Api",
+    ],
+    databases: ["MongoDB", "PostgreSQL", "MySQL", "Elasticsearch"],
+    cloud: ["AWS", "GCP", "Digital Ocean"],
+    devOps: [
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "GitLab CI/CD",
+      "GitHub Actions",
+    ],
+  };
+};
 \`\`\`
 `;
 
 export const education = `
 \`\`\`js
 const education = () => {
-     return 'Bachelor of Computer Science from University of Engineering and Technology, Lahore'
+     return 'Bachelor in Computer Science, from University of Engineering and Technology, Lahore'
 }
 \`\`\`
 `;
