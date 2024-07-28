@@ -43,6 +43,7 @@ const config: Config = {
     animation: {
       meteor: "meteor 5s linear infinite",
       pulse: "pulse 2s ease-out infinite",
+      grid: "grid 15s linear infinite",
     },
     keyframes: {
       meteor: {
@@ -56,6 +57,10 @@ const config: Config = {
       pulse: {
         "0%, 100%": { boxShadow: "0 0 0 0 var(--light-accent-color)" },
         "50%": { boxShadow: "0 0 0 8px var(--light-accent-color)" },
+      },
+      grid: {
+        "0%": { transform: "translateY(-50%)" },
+        "100%": { transform: "translateY(0)" },
       },
     },
   },

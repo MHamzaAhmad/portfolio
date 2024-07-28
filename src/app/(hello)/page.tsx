@@ -5,6 +5,7 @@ import BoxReveal from "@/components/magicui/box-reveal";
 import PulsatingButton from "@/components/ui/pulsating-button";
 import { Spacer } from "@chakra-ui/react";
 import ConnectButton from "./components/ConnectButton";
+import RetroGrid from "@/components/magicui/retro-grid";
 
 interface RevealProps {
   children: ReactElement;
@@ -57,6 +58,7 @@ const Hello: React.FC = () => {
         <div className="col-span-1 flex justify-center laptop:items-end items-center">
           <IconCloudComponent />
         </div>
+        <RetroGrid />
       </div>
     </>
   );
