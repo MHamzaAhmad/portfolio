@@ -21,6 +21,7 @@ interface Props {
 const route = "/resume";
 
 const ResumeButton: FC<Props> = ({ leftBorder }): ReactNode => {
+  const [isOpen, setIsOpen] = useState<boolean | undefined>(undefined);
   const currentPath = usePathname();
   const [path, setPath] = useState(currentPath);
   const initialFocusRef = useRef(null);
@@ -41,6 +42,7 @@ const ResumeButton: FC<Props> = ({ leftBorder }): ReactNode => {
       link.download = "hamza_resume.pdf";
       link.click();
       window.URL.revokeObjectURL(link.href); // Clean up URL object after download
+      setIsOpen(false);
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);
     }
@@ -51,6 +53,9 @@ const ResumeButton: FC<Props> = ({ leftBorder }): ReactNode => {
       initialFocusRef={initialFocusRef}
       placement="bottom"
       closeOnBlur={true}
+      closeOnEsc={true}
+      isOpen={isOpen}
+      onClose={() => setIsOpen(false)}
     >
       <PopoverTrigger>
         <button
@@ -63,6 +68,7 @@ const ResumeButton: FC<Props> = ({ leftBorder }): ReactNode => {
               ? "border-b-2 border-b-accent-color text-sec-text-color"
               : ""
           }`}
+          onClick={() => setIsOpen(true)}
         >
           _resume
         </button>
@@ -96,6 +102,7 @@ const ResumeButton: FC<Props> = ({ leftBorder }): ReactNode => {
               whileTap={{ scale: 0.8 }}
               onClick={() => {
                 router.push("/resume");
+                setIsOpen(false);
               }}
             >
               view
