@@ -40,6 +40,29 @@ const config: Config = {
       two: "2rem",
       heading: "3.875rem",
     },
+    animation: {
+      meteor: "meteor 5s linear infinite",
+      pulse: "pulse 2s ease-out infinite",
+      grid: "grid 15s linear infinite",
+    },
+    keyframes: {
+      meteor: {
+        "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+        "70%": { opacity: "1" },
+        "100%": {
+          transform: "rotate(215deg) translateX(-500px)",
+          opacity: "0",
+        },
+      },
+      pulse: {
+        "0%, 100%": { boxShadow: "0 0 0 0 var(--light-accent-color)" },
+        "50%": { boxShadow: "0 0 0 8px var(--light-accent-color)" },
+      },
+      grid: {
+        "0%": { transform: "translateY(-50%)" },
+        "100%": { transform: "translateY(0)" },
+      },
+    },
   },
   plugins: [],
 };
