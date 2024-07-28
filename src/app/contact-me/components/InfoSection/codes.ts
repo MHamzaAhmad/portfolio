@@ -3,7 +3,8 @@ export const contactInfo = `
 const contactInfo = () => {
      return {
           _email: "hamzabuzz88@gmail.com",
-          _phone: "+92 306 1158808"
+          _phone: "+92 306 1158808",
+          _linkedin: "linkedin.com/in/mhamza88/"
      }
 }
 \`\`\`

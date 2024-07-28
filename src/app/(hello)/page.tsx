@@ -2,6 +2,9 @@ import React, { ReactElement, ReactNode } from "react";
 import { IconCloudComponent } from "./components/IconCloud";
 import Meteors from "@/components/magicui/meteors";
 import BoxReveal from "@/components/magicui/box-reveal";
+import PulsatingButton from "@/components/ui/pulsating-button";
+import { Spacer } from "@chakra-ui/react";
+import ConnectButton from "./components/ConnectButton";
 
 interface RevealProps {
   children: ReactElement;
@@ -47,6 +50,8 @@ const Hello: React.FC = () => {
             <Reveal>
               <div>{"// lets connect! and create something amazing"}</div>
             </Reveal>
+            <Spacer height={10} />
+            <ConnectButton />
           </div>
         </div>
         <div className="col-span-1 flex justify-center laptop:items-end items-center">
