@@ -18,7 +18,9 @@ const Reveal: React.FC<RevealProps> = ({ children }) => {
 const Hello: React.FC = () => {
   return (
     <>
-      <Meteors number={40} />
+      <div className="hidden laptop:inline-block">
+        <Meteors number={40} />
+      </div>
       <div className="grid grid-cols-1 laptop:grid-cols-2 w-full h-full">
         <div className="col-span-1 flex flex-col justify-center laptop:items-end items-center">
           <div className="px-4">
@@ -55,7 +57,7 @@ const Hello: React.FC = () => {
             <ConnectButton />
           </div>
         </div>
-        <div className="col-span-1 flex justify-center laptop:items-end items-center">
+        <div className="col-span-1 hidden justify-center laptop:items-end items-center laptop:flex">
           <IconCloudComponent />
         </div>
         <RetroGrid />
