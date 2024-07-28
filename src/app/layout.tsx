@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import MobileFooter from "../components/MobileFooter";
 import { Box } from "@chakra-ui/react";
 import ProgressBar from "@/config/ProgressBar";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "@/config/highlightTheme.css";
 
@@ -74,6 +75,7 @@ export default function RootLayout({
             </footer>
           </ProgressBar>
         </Providers>
+        <SpeedInsights />
       </body>
     </html>
   );
