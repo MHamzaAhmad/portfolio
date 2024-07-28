@@ -14,7 +14,7 @@ export const ExpandedProjectCard: FC<Props> = ({ project, onClose }) => {
     <div className="max-h-[50dvh]">
       <div className="flex justify-between items-center">
         <Heading className="font-bold">{project.name}</Heading>
-        <div>
+        <div className="flex">
           <SecondaryButton className="me-4" route={project.url}>
             view-project
           </SecondaryButton>
