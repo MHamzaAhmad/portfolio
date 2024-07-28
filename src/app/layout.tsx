@@ -68,7 +68,7 @@ export default function RootLayout({
               <MainHeader />
               <MobileHeader />
             </header>
-            <Box className="h-full overflow-scroll">{children}</Box>
+            <Box className="h-dvh overflow-scroll">{children}</Box>
             <footer className="sticky bottom-0">
               <Footer />
               <MobileFooter />

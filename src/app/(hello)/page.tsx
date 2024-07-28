@@ -12,13 +12,17 @@ interface RevealProps {
 }
 
 const Reveal: React.FC<RevealProps> = ({ children }) => {
-  return <BoxReveal boxColor="#fea55f">{children}</BoxReveal>;
+  return (
+    <BoxReveal boxColor="#fea55f" duration={0.5}>
+      {children}
+    </BoxReveal>
+  );
 };
 
 const Hello: React.FC = () => {
   return (
     <>
-      <div className="hidden laptop:inline-block">
+      <div className="hidden laptop:block">
         <Meteors number={40} />
       </div>
       <div className="grid grid-cols-1 laptop:grid-cols-2 w-full h-full">
@@ -39,20 +43,25 @@ const Hello: React.FC = () => {
             </Reveal>
             <Reveal>
               <div className="mt-[5.07rem]">
-                {"// welcome to my humble abode"}
+                {"// Welcome to my creative space"}
               </div>
             </Reveal>
             <Reveal>
               <div className="mt-3">
-                {"// i can create platform of your dreams..."}
+                {"// Crafting innovative solutions for your next big idea"}
               </div>
             </Reveal>
             <Reveal>
-              <div>{"// just like i have done in the past"}</div>
+              <div>
+                {"// Turning visions into reality with experience and passion"}
+              </div>
             </Reveal>
             <Reveal>
-              <div>{"// lets connect! and create something amazing"}</div>
+              <div>
+                {"// Let’s collaborate and build something extraordinary"}
+              </div>
             </Reveal>
+
             <Spacer height={10} />
             <ConnectButton />
           </div>
