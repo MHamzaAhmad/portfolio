@@ -15,6 +15,7 @@ import {
 import { CloseIcon } from "@chakra-ui/icons";
 import MobileFooter from "../MobileFooter";
 import { useRouter } from "next/navigation";
+import ResumeButton from "../Header/ResumeButton";
 
 interface NavDrawerProps {
   isOpen: boolean;
@@ -32,6 +33,7 @@ const NavDrawer = ({ isOpen, onClose }: NavDrawerProps) => {
     { label: "_hello", link: "/" },
     { label: "_about_me", link: "/about-me" },
     { label: "_projects", link: "/projects" },
+    { label: "_resume", link: "/resume/options" },
     { label: "_contact_me", link: "/contact-me" },
   ];
 

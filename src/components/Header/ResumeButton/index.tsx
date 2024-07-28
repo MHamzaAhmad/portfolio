@@ -1,4 +1,5 @@
 "use client";
+import { RESUME_PFD } from "@/common/constants";
 import {
   Popover,
   PopoverArrow,
@@ -31,8 +32,7 @@ const ResumeButton: FC<Props> = ({ leftBorder }): ReactNode => {
 
   const downloadResume = async () => {
     try {
-      const url =
-        "https://firebasestorage.googleapis.com/v0/b/portfolio-dae28.appspot.com/o/hamza_resume_may.pdf?alt=media&token=948ade1a-8998-44c8-b104-15f10f820b21";
+      const url = RESUME_PFD;
       const response = await fetch(url);
       if (!response.ok) throw new Error("Network response was not ok");
       const blob = await response.blob();
