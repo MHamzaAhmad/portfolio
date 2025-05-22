@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { memo, useEffect, useMemo, useState } from "react";
 import { useTheme } from "next-themes";
 import {
   Cloud,
@@ -31,13 +31,18 @@ export const cloudProps: Omit<ICloud, "children"> = {
     clickToFront: 500,
     tooltipDelay: 0,
     outlineColour: "#0000",
-    maxSpeed: 0.04,
-    minSpeed: 0.02,
-    // dragControl: false,
+    maxSpeed: 0.03,
+    minSpeed: 0.01,
+    freezeActive: true,
+    freezeDecel: true,
+    noSelect: true,
+    noMouse: false,
+    shuffleTags: false,
+    fadeIn: 500,
   },
 };
 
-export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
+const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
   const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
   const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
   const minContrastRatio = theme === "dark" ? 2 : 1.2;
@@ -63,26 +68,50 @@ export type DynamicCloudProps = {
 
 type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 
+const IconCloudContent = memo(
+  ({ renderedIcons }: { renderedIcons: React.ReactNode }) => {
+    return (
+      // @ts-ignore
+      <Cloud {...cloudProps}>
+        <>{renderedIcons}</>
+      </Cloud>
+    );
+  }
+);
+
+IconCloudContent.displayName = "IconCloudContent";
+
 export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
   const [data, setData] = useState<IconData | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const { theme } = useTheme();
 
   useEffect(() => {
-    fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
-  }, [iconSlugs]);
+    const timer = setTimeout(() => {
+      fetchSimpleIcons({ slugs: iconSlugs }).then((result) => {
+        setData(result);
+        setIsLoading(false);
+      });
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const renderedIcons = useMemo(() => {
     if (!data) return null;
 
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "light"),
+      renderCustomIcon(icon, theme || "light")
     );
   }, [data, theme]);
 
-  return (
-    // @ts-ignore
-    <Cloud {...cloudProps}>
-      <>{renderedIcons}</>
-    </Cloud>
-  );
+  if (isLoading) {
+    return (
+      <div className="w-full h-full flex items-center justify-center">
+        Loading...
+      </div>
+    );
+  }
+
+  return <IconCloudContent renderedIcons={renderedIcons} />;
 }
