@@ -15,13 +15,13 @@ const JsonProperty: FC<JsonPropertyProps> = ({
   return (
     <Box ml={marginLeft}>
       <Text display="inline" color="accent-color">
-        "{name}"
+        &quot;{name}&quot;
       </Text>
       <Text display="inline" color="foreground-color">
         :{" "}
       </Text>
       <Text display="inline" color="secondary-text-color">
-        "{value}"
+        &quot;{value}&quot;
       </Text>
       {hasComma && (
         <Text display="inline" color="foreground-color">

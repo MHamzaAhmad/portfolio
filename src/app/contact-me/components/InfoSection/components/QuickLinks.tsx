@@ -26,7 +26,7 @@ const QuickLinks: FC<QuickLinksProps> = ({ data }) => {
       bg="background-color"
     >
       <Text color="accent-color" mb={2}>
-        // Quick Links
+        {/* Quick Links */}
       </Text>
       <Flex direction="column" gap={2}>
         <QuickLink

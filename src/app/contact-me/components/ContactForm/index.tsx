@@ -12,7 +12,7 @@ import {
   TerminalInput,
   WelcomeMessage,
   GuiForm,
-  CliForm
+  CliForm,
 } from "./components";
 
 // Get base URL from environment variables or default to localhost

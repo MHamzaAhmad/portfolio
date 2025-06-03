@@ -16,7 +16,7 @@ const JsonObject: FC<JsonObjectProps> = ({
   return (
     <Box ml={marginLeft}>
       <Text display="inline" color="accent-color">
-        "{name}"
+        &quot;{name}&quot;
       </Text>
       <Text display="inline" color="foreground-color">
         :{" "}

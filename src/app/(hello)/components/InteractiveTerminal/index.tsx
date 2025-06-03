@@ -168,8 +168,8 @@ const InteractiveTerminal = memo(() => {
             className="font-mono text-sm h-[calc(100%-80px)] overflow-auto mb-2 scroll-smooth"
           >
             <div className="text-sec-text-color mb-3">
-              Welcome to the interactive terminal! Type 'help' to see available
-              commands.
+              Welcome to the interactive terminal! Type &apos;help&apos; to see
+              available commands.
             </div>
 
             {customCommands.map((cmd, index) => (

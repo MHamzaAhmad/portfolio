@@ -37,15 +37,17 @@ function TextContent() {
       <div className="text-two text-purple-text mt-2">
         {"> FullStack Software Engineer"}
       </div>
-      <div className="mt-[5.07rem]">{"// Welcome to my creative space"}</div>
+      <div className="mt-[5.07rem]">
+        {/* // Welcome to my creative space */}
+      </div>
       <div className="mt-3">
-        {"// Crafting innovative solutions for your next big idea"}
+        {/* // Crafting innovative solutions for your next big idea */}
       </div>
       <div className="mt-1">
-        {"// Turning visions into reality with experience and passion"}
+        {/* // Turning visions into reality with experience and passion */}
       </div>
       <div className="mt-1">
-        {"// Let's collaborate and build something extraordinary"}
+        {/* // Let's collaborate and build something extraordinary */}
       </div>
     </>
   );

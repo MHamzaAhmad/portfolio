@@ -112,8 +112,8 @@ const ThankYou: FC<Props> = ({ onNewMessage }) => {
               fontStyle="italic"
               fontSize="var(--font-size-xs)"
             >
-              <Text>// Thank you for reaching out!</Text>
-              <Text>// I'll get back to you as soon as possible</Text>
+              <Text>{/* Thank you for reaching out! */}</Text>
+              <Text>{/* I&apos;ll get back to you as soon as possible */}</Text>
             </Box>
           </Box>
 
