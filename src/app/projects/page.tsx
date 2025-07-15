@@ -84,7 +84,7 @@ const ProjectsPage = () => {
           Welcome to my developer portfolio! Here are some of the products, apps, and platforms I’ve built or contributed to.
         </div>
         <div style={{ color: "var(--purple-accent)", fontSize: "0.95rem", marginLeft: "0.5rem" }}>
-          // Click any project for details
+          {/* Click any project for details */}
         </div>
       </div>
       {/* Main Projects Container */}
@@ -150,7 +150,7 @@ const ProjectsPage = () => {
           Some fun and useful personal projects I’ve built for myself and other devs.
         </div>
         <div style={{ color: "var(--purple-accent)", fontSize: "0.95rem", marginLeft: "0.5rem" }}>
-          // Click any project for details
+          {/* Click any project for details */}
         </div>
       </div>
       <div className="w-full flex flex-col items-center">

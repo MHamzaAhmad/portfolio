@@ -35,7 +35,7 @@ const ProjectCard: FC<Props> = (props) => {
       }}
     >
       <div style={{ color: "var(--accent-color)", fontWeight: 700, fontSize: "1rem", marginBottom: 4 }}>
-        {`project-${props.index + 1}`} <span style={{ color: "var(--purple-accent)", fontWeight: 400 }}>// {props.project.name.toLowerCase()}</span>
+        {`project-${props.index + 1}`} <span style={{ color: "var(--purple-accent)", fontWeight: 400 }}>{`// ${props.project.name.toLowerCase()}`}</span>
       </div>
       <div style={{ color: "var(--secondary-text-color)", fontSize: "0.95rem", marginBottom: 8 }}>
         {props.project.description}

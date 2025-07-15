@@ -30,7 +30,7 @@ export const ExpandedProjectCard: FC<Props> = ({ project, onClose }) => {
             $ project --view {project.name.toLowerCase().replace(/\s+/g, '-')}
           </div>
           <div style={{ color: "var(--purple-accent)", fontSize: "0.95rem", marginLeft: "0.5rem" }}>
-            // {project.description}
+            {/* {project.description} */}
           </div>
         </div>
         <div className="flex justify-between items-center mb-4">

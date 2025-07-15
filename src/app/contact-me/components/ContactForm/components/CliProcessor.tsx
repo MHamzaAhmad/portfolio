@@ -8,7 +8,7 @@ interface CliProcessorProps {
   submitForm: (name: string, email: string, message: string) => void;
 }
 
-const CliProcessor: FC<CliProcessorProps> = ({ addOutput, submitForm }) => {
+const CliProcessor = ({ addOutput, submitForm }: CliProcessorProps) => {
   const [step, setStep] = useState(0);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -32,7 +32,7 @@ const CliProcessor: FC<CliProcessorProps> = ({ addOutput, submitForm }) => {
         >
           <Text color="foreground-color">Step 1/3: Enter your name</Text>
         </Box>
-        <Text color="secondary-text-color">What's your name?</Text>
+        <Text color="secondary-text-color">What&apos;s your name?</Text>
       </>
     );
   }, [addOutput]);
@@ -62,7 +62,7 @@ const CliProcessor: FC<CliProcessorProps> = ({ addOutput, submitForm }) => {
               >
                 <Text color="foreground-color">Step 2/3: Enter your email</Text>
               </Box>
-              <Text color="secondary-text-color">What's your email?</Text>
+              <Text color="secondary-text-color">What&apos;s your email?</Text>
             </>
           );
           return true;
@@ -159,7 +159,7 @@ const CliProcessor: FC<CliProcessorProps> = ({ addOutput, submitForm }) => {
                           </Text>
                         </Box>
                         <Text color="secondary-text-color">
-                          What's your name?
+                          What&apos;s your name?
                         </Text>
                       </>
                     );
@@ -196,9 +196,9 @@ const CliProcessor: FC<CliProcessorProps> = ({ addOutput, submitForm }) => {
     getCurrentPrompt: () => {
       switch (step) {
         case 1:
-          return "What's your name?";
+          return "What&apos;s your name?";
         case 2:
-          return "What's your email?";
+          return "What&apos;s your email?";
         case 3:
           return "Your message:";
         default:

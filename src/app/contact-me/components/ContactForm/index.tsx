@@ -98,7 +98,7 @@ const ContactForm: FC = () => {
         >
           <Text color="foreground-color">Step 1/3: Enter your name</Text>
         </Box>
-        <Text color="secondary-text-color">What's your name?</Text>
+        <Text color="secondary-text-color">What&apos;s your name?</Text>
       </>
     );
   }, [addOutput]);
@@ -164,7 +164,7 @@ const ContactForm: FC = () => {
               >
                 <Text color="foreground-color">Step 2/3: Enter your email</Text>
               </Box>
-              <Text color="secondary-text-color">What's your email?</Text>
+              <Text color="secondary-text-color">What&apos;s your email?</Text>
             </>
           );
           break;
@@ -265,7 +265,7 @@ const ContactForm: FC = () => {
                           </Text>
                         </Box>
                         <Text color="secondary-text-color">
-                          What's your name?
+                          What&apos;s your name?
                         </Text>
                       </>
                     );
@@ -373,7 +373,7 @@ const ContactForm: FC = () => {
         default:
           return addOutput(
             <Text color="red.400">
-              Command not found: {command}. Type 'help' to see available
+              Command not found: {command}. Type &apos;help&apos; to see available
               commands.
             </Text>
           );

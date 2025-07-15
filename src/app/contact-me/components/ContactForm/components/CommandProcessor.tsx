@@ -78,7 +78,7 @@ const CommandProcessor: FC<CommandProcessorProps> = ({
       default:
         return addOutput(
           <Text color="red.400">
-            Command not found: {trimmedCommand}. Type 'help' to see available
+            Command not found: {trimmedCommand}. Type &apos;help&apos; to see available
             commands.
           </Text>
         );
