@@ -1,5 +1,5 @@
 "use client";
-import { useProjects } from "@/data/projects";
+import { usePersonalProjects, useProjects } from "@/data/projects";
 import ProjectCard from "./Components/ProjectCard";
 import { useState, useEffect, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -11,6 +11,7 @@ const ProjectsPage = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const projects = useProjects();
+  const personalProjects = usePersonalProjects();
 
   // Filtered projects based on category and search term
   const filteredProjects = useMemo(() => {
@@ -62,51 +63,32 @@ const ProjectsPage = () => {
 
   return (
     <>
-      <div className="w-full flex flex-col items-center">
-        {/* Filter and Search Section */}
-        <div className="w-full max-w-[70vw] p-4 mb-2">
-          <div className="flex flex-wrap justify-between items-center gap-4">
-            <div className="flex items-center">
-              <span className="text-purple-text font-bold mr-3">filter:</span>
-              <div className="flex flex-wrap gap-2">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setFilter(null)}
-                  className={`px-3 py-1 text-xs rounded-md border border-border-color ${
-                    !filter ? "bg-accent-color text-white" : "bg-transparent"
-                  }`}
-                >
-                  all
-                </motion.button>
-                {allTechnologies.slice(0, 8).map((tech) => (
-                  <motion.button
-                    key={tech}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setFilter(tech)}
-                    className={`px-3 py-1 text-xs rounded-md border border-border-color ${
-                      filter === tech
-                        ? "bg-accent-color text-white"
-                        : "bg-transparent"
-                    }`}
-                  >
-                    {tech}
-                  </motion.button>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search projects..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="px-4 py-2 rounded-md border border-border-color bg-transparent focus:outline-none focus:ring-1 focus:ring-accent-color"
-              />
-            </div>
-          </div>
+      {/* Hero/Intro Section */}
+      <div
+        style={{
+          background: "var(--code-background)",
+          border: "1px solid var(--border-color)",
+          borderRadius: "0.75rem",
+          fontFamily: "var(--font-family-mono)",
+          padding: "2rem 1.5rem 1.5rem 1.5rem",
+          margin: "2rem auto 1.5rem auto",
+          maxWidth: "700px",
+          boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
+        }}
+        className="mb-8"
+      >
+        <div style={{ color: "var(--accent-color)", fontWeight: 700, fontSize: "1.3rem" }}>
+          $ projects --list
         </div>
+        <div style={{ color: "var(--secondary-text-color)", fontSize: "1.1rem", margin: "0.5rem 0 0.5rem 0.5rem" }}>
+          Welcome to my developer portfolio! Here are some of the products, apps, and platforms I’ve built or contributed to.
+        </div>
+        <div style={{ color: "var(--purple-accent)", fontSize: "0.95rem", marginLeft: "0.5rem" }}>
+          // Click any project for details
+        </div>
+      </div>
+      {/* Main Projects Container */}
+      <div className="w-full flex flex-col items-center">
 
         {/* Projects Grid */}
         <div className="grid desktop:grid-cols-3 laptop:grid-cols-2 grid-cols-1 p-[2.5rem] gap-4 desktop:max-w-[70vw] relative">
@@ -147,7 +129,52 @@ const ProjectsPage = () => {
           )}
         </div>
       </div>
-
+      {/* Personal Projects Section */}
+      <div
+        style={{
+          background: "var(--code-background)",
+          border: "1px solid var(--border-color)",
+          borderRadius: "0.75rem",
+          fontFamily: "var(--font-family-mono)",
+          padding: "2rem 1.5rem 1.5rem 1.5rem",
+          margin: "2rem auto 1.5rem auto",
+          maxWidth: "700px",
+          boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
+        }}
+        className="mb-8 mt-12"
+      >
+        <div style={{ color: "var(--accent-color)", fontWeight: 700, fontSize: "1.3rem" }}>
+          $ personal-projects --list
+        </div>
+        <div style={{ color: "var(--secondary-text-color)", fontSize: "1.1rem", margin: "0.5rem 0 0.5rem 0.5rem" }}>
+          Some fun and useful personal projects I’ve built for myself and other devs.
+        </div>
+        <div style={{ color: "var(--purple-accent)", fontSize: "0.95rem", marginLeft: "0.5rem" }}>
+          // Click any project for details
+        </div>
+      </div>
+      <div className="w-full flex flex-col items-center">
+        <div className="grid desktop:grid-cols-3 laptop:grid-cols-2 grid-cols-1 p-[2.5rem] gap-4 desktop:max-w-[70vw] relative">
+          <AnimatePresence>
+            {personalProjects.map((project, index) => (
+              <motion.div
+                key={project.name}
+                layoutId={project.name}
+                className="relative"
+                onClick={() => setSelected(project)}
+                whileHover={{ scale: 1.04 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+              >
+                <ProjectCard index={index} project={project} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+      </div>
+      {/* Modal remains unchanged */}
       <AnimatePresence>
         {selected && (
           <>

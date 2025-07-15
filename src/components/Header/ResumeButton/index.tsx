@@ -79,17 +79,17 @@ const ResumeButton: FC<Props> = ({ leftBorder }): ReactNode => {
           color="blue.800"
           borderColor="var(--border-color)"
         >
-          <PopoverHeader pt={4} border="0">
+          <PopoverHeader pt={4} border="0" color="var(--secondary-text-color)" fontSize="1.05rem">
             Do you want to view or download the resume?
           </PopoverHeader>
           <PopoverArrow
             bg="var(--code-background)"
             borderColor="var(--border-color)"
           />
-          <PopoverCloseButton />
+          <PopoverCloseButton color="var(--secondary-text-color)" />
           <PopoverFooter border="0" pb={4} className="flex justify-end gap-3">
             <motion.button
-              className="bg-accent-color p-2 text-[0.8rem] rounded-lg"
+              className="bg-accent-color p-2 text-[0.8rem] rounded-lg text-white"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.8 }}
               onClick={downloadResume}
@@ -97,7 +97,7 @@ const ResumeButton: FC<Props> = ({ leftBorder }): ReactNode => {
               download
             </motion.button>
             <motion.button
-              className="bg-accent-color p-2 text-[0.8rem] rounded-lg"
+              className="bg-accent-color p-2 text-[0.8rem] rounded-lg text-white"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.8 }}
               onClick={() => {

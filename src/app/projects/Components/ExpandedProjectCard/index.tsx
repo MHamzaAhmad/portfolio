@@ -3,7 +3,6 @@ import Heading from "@/components/Base/Heading";
 import SecondaryButton from "@/components/Base/SecondaryButton";
 import { Spacer } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import Image, { ImageLoaderProps } from "next/image";
 import { FC } from "react";
 
 interface Props {
@@ -12,13 +11,28 @@ interface Props {
 }
 
 export const ExpandedProjectCard: FC<Props> = ({ project, onClose }) => {
-  const loader = ({ src }: ImageLoaderProps) => {
-    return src;
-  };
-
   return (
     <div className="relative p-2">
       <div>
+        {/* Terminal-style header */}
+        <div
+          style={{
+            background: "var(--code-background)",
+            border: "1px solid var(--border-color)",
+            borderRadius: "0.75rem",
+            fontFamily: "var(--font-family-mono)",
+            padding: "1.2rem 1rem 0.7rem 1rem",
+            marginBottom: "1.5rem",
+            boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
+          }}
+        >
+          <div style={{ color: "var(--accent-color)", fontWeight: 700, fontSize: "1.1rem" }}>
+            $ project --view {project.name.toLowerCase().replace(/\s+/g, '-')}
+          </div>
+          <div style={{ color: "var(--purple-accent)", fontSize: "0.95rem", marginLeft: "0.5rem" }}>
+            // {project.description}
+          </div>
+        </div>
         <div className="flex justify-between items-center mb-4">
           <Heading className="font-bold">{project.name}</Heading>
           <div className="flex items-center space-x-3">
@@ -33,24 +47,6 @@ export const ExpandedProjectCard: FC<Props> = ({ project, onClose }) => {
             </motion.button>
           </div>
         </div>
-
-        {/* Hero image with overlay */}
-        <div className="relative h-[220px] mb-6 rounded-lg overflow-hidden">
-          <Image
-            loader={loader}
-            src={project.image}
-            alt={project.name}
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-            <div className="text-white">
-              <h3 className="text-xl font-bold mb-1">{project.name}</h3>
-              <p className="text-sm opacity-90">{project.description}</p>
-            </div>
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 laptop:grid-cols-3 gap-6">
           {/* Left column with details */}
           <div className="laptop:col-span-2">
@@ -60,6 +56,7 @@ export const ExpandedProjectCard: FC<Props> = ({ project, onClose }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.1 }}
               className="bg-code-back p-5 rounded-lg mb-6"
+              style={{ fontFamily: "var(--font-family-mono)" }}
             >
               <h3 className="text-lg font-medium mb-3 text-accent-color">
                 Project Overview
@@ -68,13 +65,13 @@ export const ExpandedProjectCard: FC<Props> = ({ project, onClose }) => {
                 {project.detailedDescription}
               </p>
             </motion.div>
-
             {/* Key Features */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.2 }}
               className="bg-code-back p-5 rounded-lg"
+              style={{ fontFamily: "var(--font-family-mono)" }}
             >
               <h3 className="text-lg font-medium mb-3 text-accent-color">
                 Technical Highlights
@@ -139,7 +136,6 @@ export const ExpandedProjectCard: FC<Props> = ({ project, onClose }) => {
               </div>
             </motion.div>
           </div>
-
           {/* Right column with technologies */}
           <div className="laptop:col-span-1">
             <motion.div
@@ -147,11 +143,11 @@ export const ExpandedProjectCard: FC<Props> = ({ project, onClose }) => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3, delay: 0.2 }}
               className="bg-code-back p-5 rounded-lg"
+              style={{ fontFamily: "var(--font-family-mono)" }}
             >
               <h3 className="text-md font-medium mb-4 text-accent-color">
                 Tech Stack
               </h3>
-
               <div className="space-y-4">
                 <div>
                   <h4 className="text-sm opacity-70 mb-2">frontend</h4>
@@ -166,7 +162,6 @@ export const ExpandedProjectCard: FC<Props> = ({ project, onClose }) => {
                     ))}
                   </div>
                 </div>
-
                 <div>
                   <h4 className="text-sm opacity-70 mb-2">backend</h4>
                   <div className="flex flex-wrap gap-2">
@@ -180,7 +175,6 @@ export const ExpandedProjectCard: FC<Props> = ({ project, onClose }) => {
                     ))}
                   </div>
                 </div>
-
                 <div>
                   <h4 className="text-sm opacity-70 mb-2">infrastructure</h4>
                   <div className="flex flex-wrap gap-2">
@@ -194,7 +188,6 @@ export const ExpandedProjectCard: FC<Props> = ({ project, onClose }) => {
                     ))}
                   </div>
                 </div>
-
                 {project.languages.length > 0 && (
                   <div>
                     <h4 className="text-sm opacity-70 mb-2">languages</h4>
@@ -211,7 +204,6 @@ export const ExpandedProjectCard: FC<Props> = ({ project, onClose }) => {
                   </div>
                 )}
               </div>
-
               {/* Project URL */}
               <div className="mt-6 pt-4 border-t border-border-color">
                 <h4 className="text-sm opacity-70 mb-2">project url</h4>
@@ -227,9 +219,7 @@ export const ExpandedProjectCard: FC<Props> = ({ project, onClose }) => {
             </motion.div>
           </div>
         </div>
-
         <Spacer h="1.5rem" />
-
         <div className="flex justify-end">
           <motion.button
             className="mb-2 px-5 py-2 bg-accent-color rounded-lg text-white font-medium"

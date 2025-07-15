@@ -48,12 +48,6 @@ const JsonView: FC<JsonViewProps> = ({ data }) => {
           value={data.social.linkedin}
           indentLevel={2}
         />
-        <JsonProperty
-          name="twitter"
-          value={data.social.twitter}
-          indentLevel={2}
-          hasComma={false}
-        />
       </JsonObject>
 
       {/* Availability */}

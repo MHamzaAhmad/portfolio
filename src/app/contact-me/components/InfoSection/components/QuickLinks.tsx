@@ -42,13 +42,13 @@ const QuickLinks: FC<QuickLinksProps> = ({ data }) => {
         <QuickLink
           href={data.social.github}
           icon={<FaGithub size={14} style={{ marginRight: "8px" }} />}
-          text="github.com/hamza-ahmad-hamza"
+          text="github.com/MHamzaAhmad"
           isExternal
         />
         <QuickLink
           href={data.social.linkedin}
           icon={<FaLinkedin size={14} style={{ marginRight: "8px" }} />}
-          text="linkedin.com/in/hamza-ahmad-hamza"
+          text="linkedin.com/in/mhamza88/"
           isExternal
         />
       </Flex>

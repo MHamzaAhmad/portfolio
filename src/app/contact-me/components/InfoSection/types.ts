@@ -33,7 +33,6 @@ export interface ContactData {
   social: {
     github: string;
     linkedin: string;
-    twitter: string;
   };
   availability: string;
 }

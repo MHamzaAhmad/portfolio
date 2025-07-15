@@ -21,7 +21,7 @@ const codeContent: CodeLine[] = [
   { type: "command", text: "ls languages/" },
   {
     type: "output",
-    text: "JavaScript  TypeScript  Python  Go",
+    text: "Go JavaScript  TypeScript  Python",
   },
   { type: "prompt", text: "hamza@portfolio:~$" },
   { type: "command", text: " ls skills/" },
@@ -33,13 +33,13 @@ const codeContent: CodeLine[] = [
   { type: "command", text: " cat skills/frontend/technologies.txt" },
   {
     type: "output",
-    text: "React.js  Next.js  TypeScript  JavaScript  HTML5  CSS3  Tailwind  Chakra UI",
+    text: "React.js  Next.js  TypeScript  JavaScript Flutter  HTML5  CSS3  Tailwind  Chakra UI",
   },
   { type: "prompt", text: "hamza@portfolio:~$" },
   { type: "command", text: " cat skills/backend/technologies.txt" },
   {
     type: "output",
-    text: "Go  Node.js  Express  NestJS  Fastify Python  Flask  FastAPI",
+    text: "Go  Gin GRPC Node.js  Express  NestJS  Fastify Python  Flask  FastAPI",
   },
   { type: "prompt", text: "hamza@portfolio:~$" },
   { type: "command", text: "cat skills/tools/tools.txt" },
@@ -48,7 +48,7 @@ const codeContent: CodeLine[] = [
   { type: "command", text: " cat projects.json | jq" },
   {
     type: "output",
-    text: '[\n  {\n    "name": "Portfolio",\n    "tech": ["Next.js", "TypeScript", "Chakra UI"]\n  },\n  {\n    "name": "...",\n    "status": "Many more projects to explore!"\n  }\n]',
+    text: '[\n  {\n    "name": "PioCloud",\n    "tech": ["Go", "GRPC", "Gin", "PostgreSQL", "Redis", "Microservices", "Docker", "Kubernetes"]\n  },\n  {\n    "name": "...",\n    "status": "Please visit the project page for more details"\n  }\n]',
   },
   { type: "prompt", text: "hamza@portfolio:~$" },
 ];

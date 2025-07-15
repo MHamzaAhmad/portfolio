@@ -17,7 +17,7 @@ import {
 
 // Get base URL from environment variables or default to localhost
 const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL || "https://hamza-ahmad-hamza.vercel.app";
+  process.env.NEXT_PUBLIC_BASE_URL || "https://hamza-ahmad.vercel.app";
 const THANK_YOU_PATH = "/thank-you";
 const THANK_YOU_URL = `${BASE_URL}${THANK_YOU_PATH}`;
 
