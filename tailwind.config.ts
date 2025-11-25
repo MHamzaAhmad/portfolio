@@ -15,6 +15,10 @@ const config: Config = {
         "glass-gradient":
           "linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01))",
       },
+      fontFamily: {
+        serif: ["var(--font-serif)", "serif"],
+        mono: ["var(--font-mono)", "monospace"],
+      },
       colors: {
         "border-color": "var(--border-color)",
         "accent-color": "var(--accent-color)",
