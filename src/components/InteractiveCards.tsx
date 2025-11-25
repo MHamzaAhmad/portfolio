@@ -22,7 +22,7 @@ export default function InteractiveCards({ projects }: InteractiveCardsProps) {
   const [glowIntensities, setGlowIntensities] = useState<
     Record<number, number>
   >({});
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | null>(null);
 
   // Smoothly animate glow intensities
   useEffect(() => {
