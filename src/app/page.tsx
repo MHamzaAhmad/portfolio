@@ -1,15 +1,17 @@
-import dynamic from "next/dynamic";
+import { cacheLife } from "next/cache";
 import MinimalUI from "@/components/MinimalUI";
 import NoiseOverlay from "@/components/NoiseOverlay";
+import ReactiveBackground from "@/components/ReactiveBackground";
 
-const ReactiveBackground = dynamic(() => import("@/components/ReactiveBackground"), { ssr: false });
+export default async function Home() {
+  "use cache";
+  cacheLife("days");
 
-export default function Home() {
-    return (
-        <main className="min-h-screen text-[#f0f0f0] relative overflow-hidden">
-            <NoiseOverlay />
-            <ReactiveBackground />
-            <MinimalUI />
-        </main>
-    );
+  return (
+    <main className="min-h-screen text-[#f0f0f0] relative overflow-hidden">
+      <NoiseOverlay />
+      <ReactiveBackground />
+      <MinimalUI />
+    </main>
+  );
 }
