@@ -8,14 +8,18 @@ import { useState, useCallback, useEffect, useRef } from "react";
 export default function MinimalUI() {
   const [expandedExp, setExpandedExp] = useState<number | null>(null);
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-  const [mousePositions, setMousePositions] = useState<Record<number, { x: number; y: number }>>({});
-  const [glowIntensities, setGlowIntensities] = useState<Record<number, number>>({});
+  const [mousePositions, setMousePositions] = useState<
+    Record<number, { x: number; y: number }>
+  >({});
+  const [glowIntensities, setGlowIntensities] = useState<
+    Record<number, number>
+  >({});
   const animationFrameRef = useRef<number>();
 
   // Smoothly animate glow intensities
   useEffect(() => {
     const animate = () => {
-      setGlowIntensities(prev => {
+      setGlowIntensities((prev) => {
         const next = { ...prev };
         resumeData.projects.forEach((_, i) => {
           const target = hoveredProject === i ? 1 : 0;
@@ -29,7 +33,7 @@ export default function MinimalUI() {
       });
       animationFrameRef.current = requestAnimationFrame(animate);
     };
-    
+
     animationFrameRef.current = requestAnimationFrame(animate);
     return () => {
       if (animationFrameRef.current) {
@@ -38,12 +42,15 @@ export default function MinimalUI() {
     };
   }, [hoveredProject]);
 
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLAnchorElement>, index: number) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    setMousePositions(prev => ({ ...prev, [index]: { x, y } }));
-  }, []);
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, index: number) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      setMousePositions((prev) => ({ ...prev, [index]: { x, y } }));
+    },
+    []
+  );
 
   return (
     <div className="relative z-10 min-h-screen p-4 md:p-8 max-w-[1800px] mx-auto">
@@ -117,7 +124,7 @@ export default function MinimalUI() {
             const mousePos = mousePositions[i] || { x: 50, y: 50 };
             const glowIntensity = glowIntensities[i] || 0;
             const isHovered = hoveredProject === i;
-            
+
             return (
               <motion.a
                 key={i}
@@ -135,7 +142,9 @@ export default function MinimalUI() {
                   i === 0 || i === 3 ? "md:col-span-2" : ""
                 }`}
                 style={{
-                  borderColor: `rgba(255, 255, 255, ${0.08 + glowIntensity * 0.12})`,
+                  borderColor: `rgba(255, 255, 255, ${
+                    0.08 + glowIntensity * 0.12
+                  })`,
                   background: `
                     radial-gradient(
                       600px circle at ${mousePos.x}% ${mousePos.y}%,
@@ -165,26 +174,30 @@ export default function MinimalUI() {
                 />
 
                 {/* Animated top edge highlight */}
-                <div 
+                <div
                   className="absolute top-0 left-0 right-0 h-px pointer-events-none"
                   style={{
                     background: `linear-gradient(
                       90deg,
                       transparent 0%,
-                      rgba(255, 255, 255, ${0.1 + glowIntensity * 0.3}) ${mousePos.x}%,
+                      rgba(255, 255, 255, ${0.1 + glowIntensity * 0.3}) ${
+                      mousePos.x
+                    }%,
                       transparent 100%
                     )`,
                   }}
                 />
 
                 {/* Animated left edge highlight */}
-                <div 
+                <div
                   className="absolute top-0 left-0 bottom-0 w-px pointer-events-none"
                   style={{
                     background: `linear-gradient(
                       180deg,
                       transparent 0%,
-                      rgba(255, 255, 255, ${0.05 + glowIntensity * 0.25}) ${mousePos.y}%,
+                      rgba(255, 255, 255, ${0.05 + glowIntensity * 0.25}) ${
+                      mousePos.y
+                    }%,
                       transparent 100%
                     )`,
                   }}

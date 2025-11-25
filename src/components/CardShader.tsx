@@ -44,36 +44,36 @@ float snoise(vec2 v){
 void main() {
   vec2 uv = vUv;
   float t = uTime * 0.08;
-  
+
   // Mouse interaction
   float mouseDist = distance(uv, uMouse);
   float mouseGlow = smoothstep(0.5, 0.0, mouseDist) * uHover;
-  
+
   // Elegant dark gradient base
   vec3 colorDark = vec3(0.02, 0.02, 0.03);
   vec3 colorMid = vec3(0.06, 0.06, 0.08);
   vec3 colorAccent = vec3(0.12, 0.12, 0.15);
-  
+
   // Soft flowing noise
   float n1 = snoise(uv * 2.0 + t) * 0.5 + 0.5;
   float n2 = snoise(uv * 4.0 - t * 0.5) * 0.5 + 0.5;
-  
+
   // Diagonal gradient for depth
   float diag = (uv.x + uv.y) * 0.5;
   vec3 baseGradient = mix(colorDark, colorMid, diag * 0.6);
-  
+
   // Add subtle noise variation
   baseGradient = mix(baseGradient, colorAccent, n1 * n2 * 0.3);
-  
+
   // Interactive cursor spotlight
   vec3 spotlightColor = vec3(0.15, 0.15, 0.20);
   baseGradient = mix(baseGradient, spotlightColor, mouseGlow * 0.8);
-  
+
   // Soft inner glow on edges when hovered
   float edgeDist = min(min(uv.x, 1.0 - uv.x), min(uv.y, 1.0 - uv.y));
   float edgeGlow = smoothstep(0.0, 0.1, edgeDist) * uHover * 0.1;
   baseGradient += vec3(edgeGlow);
-  
+
   // Very subtle grain texture
   float grain = snoise(uv * 100.0 + t * 10.0) * 0.02;
   baseGradient += grain * (0.5 + uHover * 0.5);
