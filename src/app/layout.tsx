@@ -16,7 +16,8 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "Muhammad Hamza | Software Engineer",
-  description: "Portfolio of Muhammad Hamza, a Software Engineer based in Lahore, Pakistan.",
+  description:
+    "Portfolio of Muhammad Hamza, a Software Engineer based in Lahore, Pakistan.",
 };
 
 export default function RootLayout({
@@ -26,7 +27,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${serif.variable} ${mono.variable} font-sans antialiased bg-black text-[#f0f0f0]`}>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-NKWJWYCZ0Y"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-NKWJWYCZ0Y');
+            `,
+          }}
+        />
+      </head>
+      <body
+        className={`${serif.variable} ${mono.variable} font-sans antialiased bg-black text-[#f0f0f0]`}
+      >
         {children}
       </body>
     </html>
