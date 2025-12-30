@@ -130,6 +130,12 @@ export const resumeData = {
   },
   projects: [
     {
+      name: "simpleemailapi.dev",
+      link: "https://simpleemailapi.dev",
+      description:
+        "Simplest and most performant email API with p50 of around 39ms written in go, tanstack start, tinybird and SES",
+    },
+    {
       name: "Page Report",
       link: "https://pagereport.app",
       description:
