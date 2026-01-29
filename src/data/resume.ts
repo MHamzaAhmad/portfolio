@@ -27,11 +27,10 @@ export const resumeData = {
       "svelte",
     ],
     backend: [
-      "Node.js (Express, Fastify)",
-      "Nest.js",
-      "Python (Flask, FastAPI)",
       "Go (Gin, Fiber)",
       "gRPC",
+      "Node.js (Express, Hono, Fastify, Nest.js)",
+      "Python (Flask, FastAPI)",
       "REST APIs",
       "Kafka",
       "MongoDB",
@@ -70,7 +69,7 @@ export const resumeData = {
       company: "Stealth Startup",
       period: "Oct 2024 – Oct 2025",
       highlights: [
-        "Spearheaded the architecture and development of multiple microservices from inception, utilizing Go and Python.",
+        "Spearheaded the architecture and development of multiple microservices from inception, utilizing Go.",
         "Led a team of 10 developers, overseeing the design, implementation, and deployment of critical systems.",
         "Implemented robust CI/CD pipelines and deployed services on bare-metal infrastructure using Docker Compose and Kubernetes.",
         "Integrated API Gateways (Traefik, Nginx, Kong) to manage and secure microservice communication.",
@@ -175,6 +174,20 @@ export const resumeData = {
       name: "Ultahost",
       link: "https://ultahost.com",
       description: "Web hosting platform built with Next.js and React.",
+    },
+  ],
+  openSource: [
+    {
+      name: "better-auth-emails",
+      link: "https://www.npmjs.com/package/better-auth-emails",
+      description:
+        "Package to send auth emails from better auth easily.",
+    },
+    {
+      name: "vectordb",
+      link: "https://github.com/MHamzaAhmad/vectordb",
+      description:
+        "A performant vector database written with Go and Rust (via C FFI), featuring SIMD and HNSW index.",
     },
   ],
 };

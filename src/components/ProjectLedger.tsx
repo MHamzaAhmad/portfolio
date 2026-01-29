@@ -8,12 +8,12 @@ interface Project {
     link: string | null;
 }
 
-export default function ProjectLedger({ projects }: { projects: Project[] }) {
+export default function ProjectLedger({ projects, title = "Selected Work" }: { projects: Project[], title?: string }) {
     return (
         <section className="py-16 border-t border-black/5">
             <div className="centered-container space-y-8">
                 <h2 className="font-mono text-xs text-[#999999] uppercase tracking-wider">
-                    Selected Work
+                    {title}
                 </h2>
 
                 <div className="grid gap-px bg-black/5 border border-black/5 rounded-lg overflow-hidden">

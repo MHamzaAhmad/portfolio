@@ -2,6 +2,7 @@ import { resumeData } from "@/data/resume";
 import HeroSection from "./HeroSection";
 import ExperienceLedger from "./ExperienceLedger";
 import ProjectLedger from "./ProjectLedger";
+import CommitLedger from "./CommitLedger";
 
 export default function MinimalUI() {
   const currentYear = new Date().getFullYear();
@@ -10,9 +11,15 @@ export default function MinimalUI() {
     <div className="bg-white min-h-screen selection:bg-[#eeeeee] selection:text-black">
       <HeroSection profile={resumeData.profile} currentYear={currentYear} />
 
+      <div className="centered-container pb-8">
+        <CommitLedger />
+      </div>
+
       <ExperienceLedger experiences={resumeData.experience} />
 
       <ProjectLedger projects={resumeData.projects} />
+
+      <ProjectLedger projects={resumeData.openSource} title="Open Source" />
 
       <footer className="py-16 border-t border-black/5 mt-12">
         <div className="centered-container flex flex-col sm:flex-row justify-between items-start gap-8">

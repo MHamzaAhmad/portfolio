@@ -39,6 +39,7 @@ export default function HeroSection({ profile, currentYear }: HeroProps) {
             Focusing on robust systems, cloud-native architecture, and high-performance APIs.
           </p>
 
+
           {/* Actions */}
           <div className="flex gap-4 pt-2">
             <a
