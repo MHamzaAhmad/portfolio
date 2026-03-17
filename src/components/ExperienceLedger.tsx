@@ -39,10 +39,16 @@ export default function ExperienceLedger({ experiences }: { experiences: Experie
                                         at {exp.company}
                                     </span>
                                 </div>
-                                {/* Optional: Show only first highlight or condensed view for "sleek" feel */}
-                                <p className="font-sans text-sm text-[#666666] leading-relaxed max-w-xl">
-                                    {exp.highlights[0]}
-                                </p>
+                                <ul className="space-y-2">
+                                    {exp.highlights.map((highlight, index) => (
+                                        <li 
+                                            key={index}
+                                            className="font-sans text-sm text-[#666666] leading-relaxed max-w-xl"
+                                        >
+                                            {highlight}
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </motion.div>
                     ))}

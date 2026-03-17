@@ -52,16 +52,25 @@ export const resumeData = {
   },
   experience: [
     {
+      role: "Software Engineer",
+      company: "Rayn Group",
+      period: "Jan 2025 – Present",
+      highlights: [
+        "Working on a healthcare project built on Google Cloud Platform with microservices architecture.",
+        "Implementing features using TypeScript, Koa, Prisma, and clean architecture patterns.",
+        "Utilizing Google Pub/Sub for service-to-service communication between microservices.",
+        "Working on tasks assigned related to backend feature development and system architecture.",
+      ],
+    },
+    {
       role: "Founder",
       company: "Indie Hacking",
-      period: "Oct 2025 – Present",
+      period: "Oct 2025 – Jan 2026",
       highlights: [
-        "Founded and launched multiple startups including researgent.com, pagereport.app, and msgmorph.com.",
-        "Developed full-stack applications leveraging Next.js and Svelte for frontends, and Go, Nest.js, and Python for backends.",
-        "Engineered AI and RAG agents using Langchain, OpenAI, and Vercel AI SDK to deliver innovative solutions.",
-        "Managed end-to-end deployment on Vercel and GCP, utilizing PostgreSQL (Supabase, NeonDB) for robust data management.",
-        "Achieved initial market traction with one product, securing 100 signups and 2 sales, demonstrating product-market fit.",
-        "Continuously expanded expertise in emerging technologies, focusing on building and serving solutions to real-world problems.",
+        "Built simpleemailapi.dev, a high-performance email API with p50 latency around 39ms, using Go, Connect RPC, TanStack Start, PostgreSQL, Tinybird, and Redis on AWS EC2 with AWS SES.",
+        "Developed pagereport.app, a multi-layered AI agent system with Python and LangChain on GCP Cloud Run, achieving parallel processing across 100+ daily users.",
+        "Launched researgent.com, an AI-powered LaTeX editor with Rust/Tauri for desktop and web with sandbox environments using Docker, and msgmorph.com, a B2B feedback engine with SDK and plugins for auth engines.",
+        "Achieved product-market fit with initial traction of 100+ signups and multiple sales across product portfolio.",
       ],
     },
     {
@@ -69,12 +78,10 @@ export const resumeData = {
       company: "Stealth Startup",
       period: "Oct 2024 – Oct 2025",
       highlights: [
-        "Spearheaded the architecture and development of multiple microservices from inception, utilizing Go.",
-        "Led a team of 10 developers, overseeing the design, implementation, and deployment of critical systems.",
-        "Implemented robust CI/CD pipelines and deployed services on bare-metal infrastructure using Docker Compose and Kubernetes.",
-        "Integrated API Gateways (Traefik, Nginx, Kong) to manage and secure microservice communication.",
-        "Developed internal Go modules to streamline development and ensure code reusability across projects.",
-        "Mentored and guided team members in best practices for cloud-native development and microservices architecture.",
+        "Joined as founding engineer from day one; developed MVP and scaled to 5 B2B clients and 5,000+ users over one year.",
+        "Architected and developed backend microservices using Go with clean onion architecture, gRPC interfaces, and event-driven communication via Kafka and RabbitMQ.",
+        "Designed and deployed complete system infrastructure on-premises with Kubernetes, API Gateway, and Keycloak for authentication and authorization.",
+        "Led a team of 10 developers, establishing CI/CD pipelines, internal Go modules, and best practices for cloud-native development.",
       ],
     },
     {
@@ -82,10 +89,11 @@ export const resumeData = {
       company: "Septem Systems",
       period: "Sept 2023 – Oct 2024",
       highlights: [
-        "Developed enterprise applications using React and TypeScript, following modern ES6+ practices",
-        "Built robust backend systems with Node.js and Nest.js, implementing clean architecture patterns",
-        "Created automated deployment pipelines using Docker and CI/CD tools",
-        "Mentored junior developers in JavaScript ecosystem and React best practices",
+        "Led the development and successful delivery of multiple projects using TypeScript, NestJS, and Go.",
+        "Built robust backend systems with microservices architecture using Node.js, Nest.js, and Go, implementing clean architecture patterns.",
+        "Developed enterprise frontend applications using React and TypeScript, following modern ES6+ practices.",
+        "Created automated deployment pipelines using Docker and CI/CD tools.",
+        "Mentored junior developers in JavaScript ecosystem, React best practices, and Go development.",
       ],
     },
     {
@@ -93,10 +101,10 @@ export const resumeData = {
       company: "Devsinc",
       period: "June 2022 – Sept 2023",
       highlights: [
-        "Developed and maintained cross-platform mobile applications for Android and iOS using Flutter.",
-        "Contributed to web projects, implementing features and fixes in React and Ruby on Rails applications.",
-        "Managed the full lifecycle of mobile applications, including CI/CD pipelines and deployment processes.",
-        "Implemented and optimized build and release processes for mobile applications.",
+        "Worked on a video streaming project managing mobile applications (Android/iOS) and backend services in Go, serving 22,000+ users.",
+        "Developed cross-platform mobile applications using Flutter and contributed to web projects with React and Go.",
+        "Worked as a junior engineer, assisting team members while successfully completing assigned tasks.",
+        "Managed full lifecycle of mobile applications including CI/CD pipelines, deployment processes, and build optimizations.",
       ],
     },
     {
@@ -104,11 +112,7 @@ export const resumeData = {
       company: "Bull BD",
       period: "Sept 2021 – April 2022",
       highlights: [
-        "Developed a real-time Flutter application for Bangladesh stock market updates, handling high-frequency data.",
-        "Engineered the backend using Node.js and Express, integrating with stock market APIs and storing data in MongoDB.",
-        "Implemented real-time data serving mechanisms to the frontend application, ensuring high performance under load.",
-        "Spearheaded full-stack development, from data ingestion and processing to user interface and deployment.",
-        "Optimized the system to efficiently manage and deliver real-time data streams to a large user base.",
+        "Developed a real-time Flutter application for Bangladesh stock market updates with Node.js backend and MongoDB.",
       ],
     },
     {
@@ -116,9 +120,7 @@ export const resumeData = {
       company: "Team Createex",
       period: "Feb 2020 – March 2021",
       highlights: [
-        "Developed multiple mobile applications for hotel management and teeth aligners using Flutter.",
-        "Gained significant experience in the software development lifecycle and mobile application development.",
-        "Collaborated with senior engineers to understand project requirements and deliver functional features.",
+        "Developed multiple mobile applications using Flutter including hotel management and teeth aligner apps.",
       ],
     },
   ],
@@ -129,16 +131,16 @@ export const resumeData = {
   },
   projects: [
     {
-      name: "simpleemailapi.dev",
+      name: "Simple Email API",
       link: "https://simpleemailapi.dev",
       description:
-        "Simplest and most performant email API with p50 of around 39ms written in go, tanstack start, tinybird and SES",
+        "High-performance email API with p50 latency around 39ms. Frontend built with TanStack Start; backend built with Go and Connect RPC for type-safe, high-speed communication. Scalable architecture using PostgreSQL, Tinybird for analytics, and Redis, deployed on AWS EC2 with AWS SES for email infrastructure.",
     },
     {
       name: "Page Report",
       link: "https://pagereport.app",
       description:
-        "Landing page analysis using AI agents built with Next.js, Python, LangChain, and GCP.",
+        "Landing page analysis platform using a swarm of AI agents built with Python and LangChain. Sophisticated GCP Cloud Run infrastructure with multiple layers of agents working in parallel; each agent deployed as separate Cloud Run service. Parallel agent architecture designed to reduce report generation time, serving 100+ users daily with efficient multi-layer processing.",
     },
     {
       name: "Researgent",
@@ -159,12 +161,6 @@ export const resumeData = {
         "OS for infrastructure management for AI workloads (finetuning, agents, benchmarking) with self-hosted models. Built with microservices (Go), Kubernetes, and PostgreSQL, deployed on on-prem bare metal servers.",
     },
     {
-      name: "NFIRS Platform",
-      link: null,
-      description:
-        "Platform for firefighters to parse and store reports and display data in dashboards. Built with NestJS, Next.js, and MongoDB.",
-    },
-    {
       name: "Smart Interview Coach",
       link: "https://smartinterviewcoach.com",
       description:
@@ -174,6 +170,11 @@ export const resumeData = {
       name: "Ultahost",
       link: "https://ultahost.com",
       description: "Web hosting platform built with Next.js and React.",
+    },
+    {
+      name: "GolfForever/FitForever",
+      link: null,
+      description: "Video streaming platform developed with Go, Flutter, and React, deployed on AWS.",
     },
   ],
   openSource: [
